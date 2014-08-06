@@ -1,0 +1,29 @@
+
+sudo apt-get install build-essential
+#Bajamos la librería libsodium necesaria para compilar DNSCrypt.
+ cd
+ wget http://download.libsodium.org/libsodium/releases/libsodium-0.4.1.tar.gz | tar -xvzf libsodium-0.4.1.tar.gz
+#Extraemos el .tar.gz e iniciamos el proceso de compilación.
+ cd /libsodium-0.4.1
+ls 
+ ./configure
+ make
+#Chequeamos que todo esté en orden.
+ make check
+#Si no tuviste problemas hasta aquí, continuamos con la instalación
+ sudo su | make install
+ cd 
+#Antes de compilar DNSCrypt tenemos que ejecutar:
+sudo ldconfig
+#Bajamos el código fuente de DNSCrypt e iniciamos la compilación
+ cd
+ wget http://download.dnscrypt.org/dnscrypt-proxy/dnscrypt-proxy-1.3.3.tar.gz | tar -xvzf dnscrypt-proxy-1.3.1.tar.gz
+ cd dnscrypt-proxy-1.3.1
+ #compilamos como Root
+ sudo su
+ ./configure
+ make
+#Continuamos con la instalación
+ sudo su
+ make install
+ exit  
