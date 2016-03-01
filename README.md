@@ -1,4 +1,4 @@
 dnscrypts
 =========
 
- pretende automatizar instalacion de dencrypts 
+ pretende automatizar instalacion de dnscrypts y mejorar conexiones en sistemas #GnuLinux 
